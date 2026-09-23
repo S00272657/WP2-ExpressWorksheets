@@ -1,0 +1,28 @@
+@endpoint = http://localhost:3000/api/v1/cars
+
+###
+POST {{endpoint}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "make": "BYD",
+  "model": "Seal"
+}
+###
+GET  {{endpoint}} HTTP/3.0
+content-type: application/json
+
+###
+GET  {{endpoint}}/sillycarID HTTP/3.0
+content-type: application/json
+
+
+###
+
+DELETE  {{endpoint}}/sillycarID HTTP/3.0
+content-type: application/json
+
+###
+
+PUT  {{endpoint}}/sillycarID HTTP/3.0
+content-type: application/json

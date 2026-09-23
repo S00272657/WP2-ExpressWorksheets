@@ -7,6 +7,9 @@ const PORT = env.port
 
 const app: Application = express(); 
 
+
+app.use(express.json());
+
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
 app.use('/api/v1/cars', carRoutes);
