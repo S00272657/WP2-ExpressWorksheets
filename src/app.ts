@@ -1,8 +1,15 @@
 import express, {Application, Request, Response} from "express" ; 
 
+import carRoutes from './routes/cars';
+
 const PORT = process.env.PORT || 5600; 
 
 const app: Application = express(); 
+
+// telling application to use this router
+//any request to /api/v1/cars will be sent to the appropriate router.
+app.use('/api/v1/cars', carRoutes);
+
 
 // logging 
 app.use((req, _res, next) => {  
