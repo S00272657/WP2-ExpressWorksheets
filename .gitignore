@@ -15,3 +15,6 @@ package-lock.json
  
 
 build 
+
+#env file
+.env
