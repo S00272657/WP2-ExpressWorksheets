@@ -4,6 +4,7 @@
 # @name postACar
 POST {{endpoint}} HTTP/1.1
 Content-Type: application/json
+x-api-key: secretKey
 
 {
   "make": "Opel",
@@ -16,6 +17,8 @@ Content-Type: application/json
 ###
 GET  {{endpoint}} HTTP/3.0
 content-type: application/json
+x-api-key: secretKey
+
 
 ###
 GET  {{endpoint}}/{{newCar}} HTTP/3.0
