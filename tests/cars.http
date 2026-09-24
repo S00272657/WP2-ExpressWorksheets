@@ -5,8 +5,8 @@ POST {{endpoint}} HTTP/1.1
 Content-Type: application/json
 
 {
-  "make": "BYD",
-  "model": "Seal"
+  "make": "Opel",
+  "model": "Corsa"
 }
 ###
 GET  {{endpoint}} HTTP/3.0
@@ -19,7 +19,7 @@ content-type: application/json
 
 ###
 
-DELETE  {{endpoint}}/sillycarID HTTP/3.0
+DELETE  {{endpoint}}/6ab53f87061829cab246e44c HTTP/3.0
 content-type: application/json
 
 ###
