@@ -2,6 +2,8 @@ import express, {Application, Request, Response} from "express" ;
 import { env } from "./config/env";
 import { connectDB } from "./config/database"
 import carRoutes from './routes/cars';
+import { authenticateKey } from "./middleware/auth.middleware";
+import { logRoute } from "./middleware/log.middleware";
 
 const PORT = env.port
 
@@ -10,19 +12,22 @@ const app: Application = express();
 
 app.use(express.json());
 
+app.use(logRoute);
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
-app.use('/api/v1/cars', carRoutes);
+app.use('/api/v1/cars', authenticateKey, carRoutes);
 
 
-// logging 
-app.use((req, _res, next) => {  
+// logging v1
+// app.use((req, _res, next) => {  
 
-     console.log(`${req.method} ${req.originalUrl}`); 
+//      console.log(`${req.method} ${req.originalUrl}`); 
 
-    next(); 
+//     next(); 
 
-}); 
+// }); 
+
+
 
 //routes
 app.get("/ping", async (_req : Request, res: Response) => { 
