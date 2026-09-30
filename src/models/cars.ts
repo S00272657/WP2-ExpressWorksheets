@@ -1,10 +1,17 @@
 import { Schema, model } from 'mongoose';
+import { z } from 'zod';
 
 export interface ICar {
   make: string;
   model: string;
   year: number;
 }
+
+export const createCarZSchema = z.object({
+    make: z.string().min(1),
+    model: z.string().min(1),
+    year: z.number().min(1950).optional(),
+});
 
 const carSchema = new Schema<ICar>(
   {

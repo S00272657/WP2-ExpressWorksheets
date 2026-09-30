@@ -9,7 +9,7 @@ x-api-key: secretKey
 {
   "make": "Opel",
   "model": "Corsa",
-  "year": "1930"
+  "year": 1800
 }
 ###
 
@@ -28,7 +28,7 @@ content-type: application/json
 
 ###
 
-DELETE  {{endpoint}}/6abccce58fd2b65d46196a10 HTTP/3.0
+DELETE  {{endpoint}}/6abcd2ddb56e6b3aed1be4cf HTTP/3.0
 content-type: application/json
 x-api-key: secretKey
 ###
