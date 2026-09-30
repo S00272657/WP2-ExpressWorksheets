@@ -24,7 +24,6 @@ x-api-key: secretKey
 GET  {{endpoint}}/{{newCar}} HTTP/3.0
 content-type: application/json
 
-
 ###
 
 DELETE  {{endpoint}}/6abcd2ddb56e6b3aed1be4cf HTTP/3.0
