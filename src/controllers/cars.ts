@@ -35,12 +35,13 @@ export class CarController {
 
     createCar = async (req: Request, res: Response): Promise<void> => {
     try {
-      const validation = createCarZSchema.safeParse(req.body);
+      // validation v1 below - validation now added to middleware
+      // const validation = createCarZSchema.safeParse(req.body);
 
-      if (!validation.success) {
-        res.status(400).json({ message: 'Invalid car data', errors: validation.error.issues });
-        return;
-      }
+      // if (!validation.success) {
+      //   res.status(400).json({ message: 'Invalid car data', errors: validation.error.issues });
+      //   return;
+      // }
 
       const newCar = await carService.createCar(req.body);
       res.status(201).json(newCar);
