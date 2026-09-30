@@ -9,7 +9,6 @@ x-api-key: secretKey
 {
   "make": "Opel",
   "model": "Corsa",
-  "year": 2004
 }
 ###
 
@@ -33,5 +32,13 @@ content-type: application/json
 x-api-key: secretKey
 ###
 
-PUT  {{endpoint}}/sillycarID HTTP/3.0
+PUT  {{endpoint}}/6abcd84d0889f8b529aeef28 HTTP/3.0
 content-type: application/json
+x-api-key: secretKey
+
+{
+  "make": "Opel",
+  "model": "Astra",
+  "year": 1930
+}
+###
