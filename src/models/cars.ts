@@ -18,6 +18,7 @@ export const updateCarZSchema = z.object({
     model: z.string().min(1),
     year: z.number().min(1950).optional(),
 });
+
 const carSchema = new Schema<ICar>(
   {
     make: { type: String, required: true },

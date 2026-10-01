@@ -4,6 +4,9 @@ import { connectDB } from "./config/database"
 import carRoutes from './routes/cars';
 import { authenticateKey } from "./middleware/auth.middleware";
 import { logRoute } from "./middleware/log.middleware";
+import { swaggerSpec } from "./config/swagger";
+import swaggerUi from 'swagger-ui-express';
+
 
 const PORT = env.port
 
@@ -11,6 +14,12 @@ const app: Application = express();
 
 
 app.use(express.json());
+
+app.use(
+'/api-docs',
+swaggerUi.serve,
+swaggerUi.setup(swaggerSpec)
+)
 
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
