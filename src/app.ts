@@ -12,10 +12,9 @@ const app: Application = express();
 
 app.use(express.json());
 
-app.use(logRoute);
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
-app.use('/api/v1/cars', authenticateKey, carRoutes);
+app.use('/api/v1/cars', authenticateKey, logRoute, carRoutes);
 
 
 // logging v1
