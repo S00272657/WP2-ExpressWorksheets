@@ -23,8 +23,8 @@ swaggerUi.setup(swaggerSpec)
 
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
-app.use('/api/v1/cars', authenticateKey, logRoute, carRoutes);
-
+app.use('/api/v1/cars', logRoute, carRoutes);
+//for auth add: authenticateKey
 
 // logging v1
 // app.use((req, _res, next) => {  
