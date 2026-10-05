@@ -78,7 +78,7 @@ export class CarController {
       res.status(200).json({ message: 'Car deleted.' });
 
     } catch (error) {
-      res.status(500).json({ message: 'Error deleted car', error });
+      res.status(500).json({ message: 'Error deleting car', error });
     } 
   };
 
@@ -96,7 +96,7 @@ export class CarController {
  *         description: Internal server error
  */
 
-  /**
+/**
 * @openapi
 * /cars/{id}:
 *   get:
@@ -115,7 +115,29 @@ export class CarController {
 *       404:
 *         description: Car not found
 *       500:
-*         description: Internal server error
+*         description: Error fetching car
+*/
+
+/**
+* @openapi
+* /cars/{id}:
+*   delete:
+*     summary: Delete a car
+*     tags:
+*       - Cars
+*     parameters:
+*       - in: path
+*         name: id
+*         required: true
+*         schema:
+*           type: string
+*     responses:
+*       200:
+*         description: Car deleted.
+*       404:
+*         description: Car not deleted
+*       500:
+*         description: Error deleting car
 */
 
 
