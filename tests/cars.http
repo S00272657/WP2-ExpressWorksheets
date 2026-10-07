@@ -8,7 +8,7 @@ x-api-key: secretKey
 
 {
   "make": "Opel",
-  "model": "Corsa",
+  "model": "Corsa"
 }
 ###
 

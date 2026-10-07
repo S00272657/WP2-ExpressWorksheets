@@ -78,9 +78,91 @@ export class CarController {
       res.status(200).json({ message: 'Car deleted.' });
 
     } catch (error) {
-      res.status(500).json({ message: 'Error deleted car', error });
+      res.status(500).json({ message: 'Error deleting car', error });
     } 
   };
+
+  /**
+ * @openapi
+ * /cars:
+ *   get:
+ *     summary: Retrieve all cars
+ *     tags:
+ *       - Cars
+ *     responses:
+ *       200:
+ *         description: Successfully retrieved cars
+ *       500:
+ *         description: Internal server error
+ */
+
+/**
+* @openapi
+* /cars/{id}:
+*   get:
+*     summary: Get a car by ID
+*     tags:
+*       - Cars
+*     parameters:
+*       - in: path
+*         name: id
+*         required: true
+*         schema:
+*           type: string
+*     responses:
+*       200:
+*         description: Car found
+*       404:
+*         description: Car not found
+*       500:
+*         description: Error fetching car
+*/
+
+/**
+* @openapi
+* /cars/{id}:
+*   delete:
+*     summary: Delete a car
+*     tags:
+*       - Cars
+*     parameters:
+*       - in: path
+*         name: id
+*         required: true
+*         schema:
+*           type: string
+*     responses:
+*       200:
+*         description: Car deleted.
+*       404:
+*         description: Car not deleted
+*       500:
+*         description: Error deleting car
+*/
+
+/**
+ * @openapi
+ * /cars:
+ *   post:
+ *     summary: Create a new car
+ *     tags:
+ *       - Cars
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/CreateCarInput'
+ *     responses:
+ *       201:
+ *         description: Successfully created car
+ *       400:
+ *         description: Bad request
+ *       500:
+ *         description: Internal server error
+ */
+
+
 
 
 }
