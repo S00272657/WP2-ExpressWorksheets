@@ -41,7 +41,7 @@ app.get("/ping", async (_req : Request, res: Response) => {
 
     res.json({ 
 
-    message: "hello from Dominik " 
+    message: "hello from Dominik" 
 
     }); 
 
@@ -68,16 +68,18 @@ app.get('/hello', async (_req : Request, res: Response) => {
 });
 
 
-const startServer = async () => {
-  await connectDB();
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+// const startServer = async () => {
+//   await connectDB();
 
-};
+//   app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+//   });
 
-startServer();
+// };
+
+// startServer();
+
 
 
  

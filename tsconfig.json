@@ -52,7 +52,7 @@
 
   }, 
 
-  "include": ["test/**/*"], 
+  "include": ["src/**/*", "tests/**/*"], 
 
   "exclude": ["node_modules", "build"] 
 
