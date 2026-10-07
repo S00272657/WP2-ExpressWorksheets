@@ -1,4 +1,4 @@
-import express, {Application, Request, Response} from "express" ; 
+import express, {application, Application, Request, Response} from "express" ; 
 import { env } from "./config/env";
 import { connectDB } from "./config/database"
 import carRoutes from './routes/cars';
@@ -10,8 +10,7 @@ import swaggerUi from 'swagger-ui-express';
 
 const PORT = env.port
 
-const app: Application = express(); 
-
+export const app: Application = express();   
 
 app.use(express.json());
 
@@ -79,6 +78,7 @@ const startServer = async () => {
 };
 
 startServer();
+
 
  
 // app.listen(PORT, () => { 
