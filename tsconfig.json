@@ -10,7 +10,7 @@
 
     "outDir": "./build", 
 
-    "rootDir": "./src", 
+    "rootDir": "./", 
 
  
 
@@ -48,11 +48,11 @@
 
     "sourceMap": true, 
 
-    "types": ["node"] 
+    "types": ["node", "vitest/globals"] 
 
   }, 
 
-  "include": ["src/**/*"], 
+  "include": ["test/**/*"], 
 
   "exclude": ["node_modules", "build"] 
 
