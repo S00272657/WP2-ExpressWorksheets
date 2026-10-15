@@ -1,17 +1,15 @@
-import express, {application, Application, Request, Response} from "express" ; 
-import { env } from "./config/env";
-import { connectDB } from "./config/database"
+import express, { Application, Request, Response} from "express" ; 
 import carRoutes from './routes/cars';
-import { authenticateKey } from "./middleware/auth.middleware";
 import { logRoute } from "./middleware/log.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
+import cors from 'cors';
 
-
-const PORT = env.port
+//const PORT = env.port
 
 export const app: Application = express();   
 
+app.use(cors());
 app.use(express.json());
 
 app.use(
