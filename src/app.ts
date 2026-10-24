@@ -4,6 +4,7 @@ import { logRoute } from "./middleware/log.middleware";
 import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
+import { errorHandler } from "./middleware/error.middleware";
 
 //const PORT = env.port
 
@@ -20,17 +21,8 @@ swaggerUi.setup(swaggerSpec)
 
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
-app.use('/api/v1/cars', logRoute, carRoutes);
+app.use('/api/v1/cars', logRoute, carRoutes, errorHandler);
 //for auth add: authenticateKey
-
-// logging v1
-// app.use((req, _res, next) => {  
-
-//      console.log(`${req.method} ${req.originalUrl}`); 
-
-//     next(); 
-
-// }); 
 
 
 
