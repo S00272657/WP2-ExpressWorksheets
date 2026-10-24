@@ -26,7 +26,7 @@ content-type: application/json
 
 ###
 
-DELETE  {{endpoint}}/6abcd2ddb56e6b3aed1be4cf HTTP/3.0
+DELETE  {{endpoint}}/6ac61002e26bca0ed54e31ff HTTP/3.0
 content-type: application/json
 x-api-key: secretKey
 ###

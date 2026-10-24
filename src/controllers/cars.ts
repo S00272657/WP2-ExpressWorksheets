@@ -17,22 +17,29 @@ export class CarController {
     }
   };
 
+  // getCarById = async (req: Request, res: Response): Promise<void> => {
+  //   try {
+  //     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+  //     const car = await carService.getCarById(id);
+  //     if (!car) {
+  //       res.status(404).json({ message: 'Car not found' });
+  //       return;
+  //     }
+  //     res.status(200).json(car);
+  //   } catch (error) {
+  //     res.status(500).json({ message: 'Error fetching car', error });
+  //   }
+  // };
   getCarById = async (req: Request, res: Response): Promise<void> => {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
-      const car = await carService.getCarById(id);
-      if (!car) {
-        res.status(404).json({ message: 'Car not found' });
-        return;
-      }
-      res.status(200).json(car);
-    } catch (error) {
-      res.status(500).json({ message: 'Error fetching car', error });
-    }
+
+    const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+    const car = await carService.getCarById(id);
+    res.status(200).json(car);
   };
 
 
-    createCar = async (req: Request, res: Response): Promise<void> => {
+
+  createCar = async (req: Request, res: Response): Promise<void> => {
     try {
       // validation v1 below - validation now added to middleware
       // const validation = createCarZSchema.safeParse(req.body);
@@ -50,35 +57,47 @@ export class CarController {
   };
 
 
+  // updateCar = async (req: Request, res: Response): Promise<void> => {
+  //   try {
+  //     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+  //     const updatedCar = await carService.updateCar(id, req.body);
+  //     if (!updatedCar) {
+  //       res.status(404).json({ message: 'Car not found' });
+  //       return;
+  //     }
+  //     res.status(200).json(updatedCar);
+  //   } catch (error) {
+  //     res.status(500).json({ message: 'Error updating car', error });
+  //   }
+  // };
   updateCar = async (req: Request, res: Response): Promise<void> => {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
-      const updatedCar = await carService.updateCar(id, req.body);
-      if (!updatedCar) {
-        res.status(404).json({ message: 'Car not found' });
-        return;
-      }
-      res.status(200).json(updatedCar);
-    } catch (error) {
-      res.status(500).json({ message: 'Error updating car', error });
-    }
+
+    const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+    const car = await carService.updateCar(id, req.body);
+    res.status(200).json(car);
   };
 
 
-    deleteCar = async (req: Request, res: Response): Promise<void> => {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
-      const deletedCar = await carService.deleteCar(id);
+  // deleteCar = async (req: Request, res: Response): Promise<void> => {
+  //   try {
+  //     const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+  //     const deletedCar = await carService.deleteCar(id);
 
-      if (!deletedCar) {
-        res.status(404).json({ message: 'Car not deleted' });
-        return;
-      }
-      res.status(200).json({ message: 'Car deleted.' });
+  //     if (!deletedCar) {
+  //       res.status(404).json({ message: 'Car not deleted' });
+  //       return;
+  //     }
+  //     res.status(200).json({ message: 'Car deleted.' });
 
-    } catch (error) {
-      res.status(500).json({ message: 'Error deleting car', error });
-    } 
+  //   } catch (error) {
+  //     res.status(500).json({ message: 'Error deleting car', error });
+  //   } 
+  // };
+  deleteCar = async (req: Request, res: Response): Promise<void> => {
+
+    const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+    const car = await carService.deleteCar(id);
+    res.status(200).json(car);
   };
 
   /**
