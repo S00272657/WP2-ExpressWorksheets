@@ -7,9 +7,9 @@ Content-Type: application/json
 x-api-key: secretKey
 
 {
-  "make": "idk",
+  "make": "test",
   "model": "Corsa",
-  "year": 1800
+  "year": 2000
 }
 ###
 
@@ -27,7 +27,7 @@ content-type: application/json
 
 ###
 
-DELETE  {{endpoint}}/6ac81b2b5e4b0d3a32f0e6ee HTTP/3.0
+DELETE  {{endpoint}}/abc HTTP/3.0
 content-type: application/json
 x-api-key: secretKey
 ###
