@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { CarService } from '../services/carService';
-import { createCarZSchema } from '../models/cars';
 
 const carService = new CarService();
 
