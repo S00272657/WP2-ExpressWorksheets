@@ -21,7 +21,7 @@ x-api-key: secretKey
 
 
 ###
-GET  {{endpoint}}/{{newCar}} HTTP/3.0
+GET  {{endpoint}}/abc HTTP/3.0
 content-type: application/json
 
 ###
