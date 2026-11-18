@@ -10,7 +10,7 @@ import cors from 'cors';
 export const app: Application = express();   
 
 //Special code to add a delay - remove later
-app.use((_req, _res, next) => setTimeout(next, 2000));
+//app.use((_req, _res, next) => setTimeout(next, 2000));
 
 app.use(cors());
 app.use(express.json());
