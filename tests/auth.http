@@ -13,6 +13,7 @@ x-api-key: secretKey
 }
 
 ###
+# @name login
 POST {{endpoint}}/login HTTP/1.1
 Content-Type: application/json
 x-api-key: secretKey
@@ -21,3 +22,9 @@ x-api-key: secretKey
   "email": "initial.test@example.com",
   "password": "secretpassword"
 }
+
+###
+# Run the login request first; this reuses the token it returned
+GET {{endpoint}}/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YWZkNzkyNGYzNjlmZmJkZmE5OWExOWIiLCJlbWFpbCI6ImluaXRpYWwudGVzdEBleGFtcGxlLmNvbSIsImlhdCI6MTc5NTAwMTAyNiwiZXhwIjoxNzk1MDAxMTQ2fQ.fr9MGsW4QuG22uXRoQoHe2UrkMPNuz-NFRnLvPi8r6E
+x-api-key: secretKey

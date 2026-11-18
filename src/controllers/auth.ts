@@ -52,15 +52,28 @@ export class AuthController {
  *       500:
  *         description: Internal server error
  */
+/**
+   * @openapi
+   * /auth/me:
+   *   get:
+   *     summary: Get the logged-in user
+   *     tags:
+   *       - Auth
+   *     responses:
+   *       200:
+   *         description: The user the token belongs to
+   *       401:
+   *         description: Missing, invalid or expired token
+   */
 
 
-  register = async (req: Request, res: Response): Promise<void> => {
+    register = async (req: Request, res: Response): Promise<void> => {
 
       const { name, email, password } = req.body;
       const user = await authService.register(name, email, password);
 
       res.status(201).json(user);
-  };
+    };
 
     login = async (req: Request, res: Response): Promise<void> => {
 
@@ -69,6 +82,15 @@ export class AuthController {
 
       res.status(200).json({ token });
     };
+
+    me = async (req: Request, res: Response): Promise<void> => {
+ 
+      // req.user was set by authenticateJWT
+      const user = await authService.getUserById(req.user!.sub);
+ 
+      res.status(200).json(user);
+    };
+
 }
 
 
