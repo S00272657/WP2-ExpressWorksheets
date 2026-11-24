@@ -1,0 +1,37 @@
+@endpoint = http://localhost:3000/api/v1
+
+###
+# @name registerAuser
+POST {{endpoint}}/auth/register HTTP/1.1
+Content-Type: application/json
+x-api-key: secretKey
+
+{
+  "name": "initialTest",
+  "email": "initial.test@example.com",
+  "password": "secretpassword"
+}
+
+###
+# @name login
+POST {{endpoint}}auth//login HTTP/1.1
+Content-Type: application/json
+x-api-key: secretKey
+
+{
+  "email": "initial.test@example.com",
+  "password": "secretpassword"
+}
+###
+@accessToken = {{login.response.body.token}}
+###
+# @name deleteAcar
+DELETE {{endpoint}}/cars/66f1428fd79bf0c5ae9988 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{accessToken}}
+ 
+
+###
+# @name getUser
+GET {{endpoint}}/auth/me HTTP/1.1
+Authorization: Bearer {{accessToken}}

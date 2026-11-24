@@ -5,13 +5,17 @@ import { swaggerSpec } from "./config/swagger";
 import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
 import { errorHandler } from "./middleware/error.middleware";
+import authRoutes from './routes/auth';
 
 //const PORT = env.port
+ 
+// ... the rest of app.ts
 
 export const app: Application = express();   
 
 //Special code to add a delay - remove later
 //app.use((_req, _res, next) => setTimeout(next, 2000));
+
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +25,8 @@ app.use(
 swaggerUi.serve,
 swaggerUi.setup(swaggerSpec)
 )
+
+app.use('/api/v1/auth', authRoutes, errorHandler);
 
 // telling application to use this router
 //any request to /api/v1/cars will be sent to the appropriate router.
